@@ -158,7 +158,10 @@ console.log(joe);
 
 
 
-Student.prototype.greeting = () => `Hi, my name is ${this.name}`;
+Student.prototype.greeting = function () {
+
+  return `Hi, my name is ${this.name}`;
+};
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this method to break!
@@ -184,8 +187,12 @@ Student.prototype.scope = function () {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
+console.log(joe.scope());
 
-Student.prototype.scopeArrow = () => console.log(this);
+Student.prototype.scopeArrow = () =>
+
+  console.log(this);
+
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 console.log(joe.scopeArrow());
@@ -195,6 +202,7 @@ console.log(joe.scopeArrow());
 // this represnt the instance .
 // 2. What is "this" when joe.scopeArrow() is invoked?
 //arrow function ues the value of this in the scope in which they were defined .
+
 // 3. Explain why "this" is different when an arrow function is used.?
 //arrow functions don’t bind this to the object that called them. They just use the value of this in the scope in which they were defined. In this case, that’s the global object. So arrow functions are unusable for object methods from this link !https://miro.medium.com/max/1200/1*3BK_UMTK8T2GGnrt4nKhxA.png
 
